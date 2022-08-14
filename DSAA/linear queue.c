@@ -8,11 +8,6 @@ int main()
 	int q[size];
 	int rear=-1,front=0;
 	int ch,i;
-	printf("\nEnter the 10 elements in the queue :\n");
-	for(i=0;i<size;i++)
-	{
-		scanf("%d",&q[i]);
-	}
 	label1:
 	printf("\nMENU:\n");
 	printf("\n1.INSERT\n2.DELETE\n3.DISPLAY\n4.EXIT");
@@ -34,6 +29,7 @@ int main()
 			{
 				rear++;
 				q[rear]=ele;
+				
 			}
 			goto label1;
 			break;	
@@ -75,8 +71,7 @@ int main()
 		}	
 		case 4:
 		{
-			goto label1;
-			break;	
+			exit(0);	
 		}
 	}
 	return 0;
