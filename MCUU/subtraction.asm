@@ -1,0 +1,8 @@
+ORG 0000h
+MOV PSW,#00h
+MOV A,#08H
+MOV B,#05H
+SUBB A,B
+END
+
+

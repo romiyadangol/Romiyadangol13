@@ -1,0 +1,10 @@
+# Assembler debug file for MCU 8051 IDE v1.4.9
+# Used assembler: MCU 8051 IDE
+# Date: 08/08/2022
+06C2D21EC695B9F1B45A33E791B227C6 "bank1.asm" 
+0 2 0 117 208 8
+0 3 3 168 0
+0 4 5 169 1
+0 5 7 170 2
+0 6 9 171 3
+0 7 11 172 4

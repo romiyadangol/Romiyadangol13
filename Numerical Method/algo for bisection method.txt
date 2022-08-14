@@ -1,0 +1,17 @@
+Algorithm for bisection method
+1.Decide initial values of a & b and stopping criterion,E.
+2.Compute f1=f(a) & f2=f(b)
+3.If f1*f2>0,a&b donot have any root and goto step 7 ;otherwise continue.
+4.compute *x=(a+b)/2 and compute f0=f(*x)
+5.if f1*f0<0 then
+	set b=*x
+	else
+	se1 a=*x
+	setf1=f0
+6.if absolute value of(b-a)/b is less than error E,then
+	root=(a+b)/2
+	write the value of root
+	goto step 7
+	else
+	goto step 4
+7.stop
