@@ -1,0 +1,13 @@
+# Assembler debug file for MCU 8051 IDE v1.4.9
+# Used assembler: MCU 8051 IDE
+# Date: 08/15/2022
+A12832EE7B370163C2160836F1CB3C43 "moving value in all register.asm" 
+0 2 0 117 208 0
+0 3 3 116 35
+0 4 5 120 18
+0 5 7 121 31
+0 6 9 122 43
+0 7 11 117 240 60
+0 8 14 127 157
+0 9 16 125 249
+0 10 18 126 18
