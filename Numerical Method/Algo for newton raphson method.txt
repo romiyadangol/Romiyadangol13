@@ -1,0 +1,13 @@
+EXPERIMENT NO -4
+Aim : solution of Non-linear equation in singl variable using the newton-raphson method
+ALGORITHM::-
+
+Newton Raphson Method:
+1.assign an initial value to x,say x0 
+2.evaluate f(x0) and (x0)
+3.find the improved estimation of X0
+	x1=x0-f(x1)/f(x0)
+4.check the accuracy of the latest estimate
+  compare relative erroe to a predefined value E.if[(x1-x0)/x1]<=E stop;
+  otherwise continue.
+5.replace x0 by x1 and repeat step 3 and 4.
