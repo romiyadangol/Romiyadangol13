@@ -11,7 +11,7 @@ void main()
 {
    int i,l;
    //clrscr();
-   printf("Insert a postfix notation :: ");
+   printf("Enter a valid postfix : ");
    gets(post);                    //getting a postfix expression
    l=strlen(post);               //string length
    for(i=0;i<l;i++)

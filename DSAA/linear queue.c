@@ -31,8 +31,9 @@ int main()
 				q[rear]=ele;
 				
 			}
+			break;
 			goto label1;
-			break;	
+		
 		}	
 		case 2:
 		{
