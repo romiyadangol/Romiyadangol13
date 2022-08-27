@@ -1,0 +1,12 @@
+//Algorithm for the secant method
+Step 1 : START
+Step 2 : Choose the interval [x0,x1] in which f(x) = 0 has a root, where x0 < x1.
+Step 3 : Find the next appropriate x2 of the required root using formula
+
+		x2 = x1 - (x1-x0)/f(x1)-f(x0) * f(x1)
+
+Step 4 : Find the successive approximations of the required root using the formula
+
+		x(n+1) = x(n) - [x(n)-x(n-1)]/f[x(n)]-f[x(n-1)] *f[x(n)]
+
+Step 5: STOP process when pre-defined condition occur.
