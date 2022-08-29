@@ -1,4 +1,4 @@
-//Tower of Hanoi
+//Tower of HanoiI
 #include<stdio.h>
 #include<conio.h>
 int TOH(int,char,char,char);
