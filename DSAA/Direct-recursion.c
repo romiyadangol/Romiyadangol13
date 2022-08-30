@@ -20,7 +20,7 @@ int facto(int x)
 	}
 	else
 	{
-		return 1;
+		return 1; //return 0
 	}
 	
 }
