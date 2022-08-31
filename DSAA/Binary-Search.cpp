@@ -1,6 +1,7 @@
 //Binary Search
 #include<stdio.h>
 #include<conio.h>
+//#<iostream>
 int main()
 {
 	int n,a[100],i,mid,mid1,l,key ,flag=0;
