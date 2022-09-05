@@ -1,5 +1,6 @@
 //Direct recursion
 //Program to find the factorial
+//1
 #include<stdio.h>
 #include<conio.h>
 int facto(int x);
