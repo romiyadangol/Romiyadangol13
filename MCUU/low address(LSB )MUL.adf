@@ -1,0 +1,9 @@
+# Assembler debug file for MCU 8051 IDE v1.4.9
+# Used assembler: MCU 8051 IDE
+# Date: 09/12/2022
+849FBE9E0218B3C3FE0FF2651E995346 "romiya/Romiyadangol13/MCUU/low address(LSB )MUL.asm" 
+0 3 0 229 112
+0 4 2 133 113 240
+0 5 5 164
+0 6 6 245 82
+0 7 8 133 240 83
