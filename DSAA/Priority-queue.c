@@ -1,5 +1,5 @@
 //Priority Queue
-//6
+//7
 #include<stdio.h>
 #include<conio.h>
 #include<stdlib.h>
