@@ -1,5 +1,5 @@
 //Binary Search
-//sandipp
+//sandipp1
 #include<stdio.h>
 #include<conio.h>
 
