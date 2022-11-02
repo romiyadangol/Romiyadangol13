@@ -1,16 +1,19 @@
-Data transfer all                                                                                                       PAGE 1
-                         1     ORG 0000H
-0000 E555                2     MOV A,55H
-0002 C3                  3     CLR C
-0003 9551                4     SUBB A,51H
-0005 F540                5     MOV 40H,A
-0007 E556                6     MOV A,56H
-0009 9552                7     SUBB A,52H
-000B F541                8     MOV 41H,A
-000D 7400                9     MOV A,#00
-000F 3400               10     ADDC A,#00
-0011 F542               11     MOV 42H,A
-                        12     END
+Interfacing circuit                                                                                                     PAGE 1
+                         1     org 0000H
+0000 0130                2             AJMP MAIN;ajmp absolute jump;ISR FOR int1
+                         3             ORG 0013H
+0013 C280                4             CLR P0.0;TURN ON LED
+0015 30B3FD              5     HERE:     JNB P3.3,HERE ;CHECKING THE STATUS OF SWITCH
+0018 D280                6             SETB P0.0 ;TURN OFF LED
+001A 32                  7             RETI ;USED TO END AN INTERRUPT SERVICE ROUTINE
+                         8             ORG 30h
+0030 D2B3                9     MAIN:     SETB P3.3 ;P3.3 AS INPUT PIN
+0032 C280               10             CLR P0.0 ;PO.0 OUTPUT
+0034 D281               11             SETB P0.1
+0036 D28A               12             SETB TCON.2;TCON MEANS TIMER CONTROL
+0038 75A884             13             MOV IE,#10000100B ;INT 1 ENABLE
+003B 80FE               14     WAIT:     SJMP WAIT
+                        15             END
 ASSEMBLY COMPLETE, NO ERRORS FOUND, NO WARNINGS
 
 
@@ -89,7 +92,8 @@ EXTI0. . . . . . . . . . . . . . . .  C  ADDR  0003H  NOT USED
 EXTI1. . . . . . . . . . . . . . . .  C  ADDR  0013H  NOT USED
 F0 . . . . . . . . . . . . . . . . .  B  ADDR  00D5H  NOT USED
 FE . . . . . . . . . . . . . . . . .  B  ADDR  009FH  NOT USED
-IE . . . . . . . . . . . . . . . . .  D  ADDR  00A8H  NOT USED
+HERE . . . . . . . . . . . . . . . .  C  ADDR  0015H
+IE . . . . . . . . . . . . . . . . .  D  ADDR  00A8H
 IE0. . . . . . . . . . . . . . . . .  B  ADDR  0089H  NOT USED
 IE1. . . . . . . . . . . . . . . . .  B  ADDR  008BH  NOT USED
 INT0 . . . . . . . . . . . . . . . .  B  ADDR  00B2H  NOT USED
@@ -105,15 +109,16 @@ IT1. . . . . . . . . . . . . . . . .  B  ADDR  008AH  NOT USED
 KBE. . . . . . . . . . . . . . . . .  D  ADDR  009DH  NOT USED
 KBF. . . . . . . . . . . . . . . . .  D  ADDR  009EH  NOT USED
 KBLS . . . . . . . . . . . . . . . .  D  ADDR  009CH  NOT USED
+MAIN . . . . . . . . . . . . . . . .  C  ADDR  0030H
 OSCCON . . . . . . . . . . . . . . .  D  ADDR  0086H  NOT USED
 OV . . . . . . . . . . . . . . . . .  B  ADDR  00D2H  NOT USED
 P. . . . . . . . . . . . . . . . . .  B  ADDR  00D0H  NOT USED
-P0 . . . . . . . . . . . . . . . . .  D  ADDR  0080H  NOT USED
+P0 . . . . . . . . . . . . . . . . .  D  ADDR  0080H
 P1 . . . . . . . . . . . . . . . . .  D  ADDR  0090H  NOT USED
 P1M1 . . . . . . . . . . . . . . . .  D  ADDR  00D4H  NOT USED
 P1M2 . . . . . . . . . . . . . . . .  D  ADDR  00E2H  NOT USED
 P2 . . . . . . . . . . . . . . . . .  D  ADDR  00A0H  NOT USED
-P3 . . . . . . . . . . . . . . . . .  D  ADDR  00B0H  NOT USED
+P3 . . . . . . . . . . . . . . . . .  D  ADDR  00B0H
 P3M1 . . . . . . . . . . . . . . . .  D  ADDR  00D5H  NOT USED
 P3M2 . . . . . . . . . . . . . . . .  D  ADDR  00E3H  NOT USED
 P4 . . . . . . . . . . . . . . . . .  D  ADDR  00C0H  NOT USED
@@ -172,7 +177,7 @@ T2CON. . . . . . . . . . . . . . . .  D  ADDR  00C8H  NOT USED
 T2MOD. . . . . . . . . . . . . . . .  D  ADDR  00C9H  NOT USED
 TB8. . . . . . . . . . . . . . . . .  B  ADDR  009BH  NOT USED
 TCLK . . . . . . . . . . . . . . . .  B  ADDR  00CCH  NOT USED
-TCON . . . . . . . . . . . . . . . .  D  ADDR  0088H  NOT USED
+TCON . . . . . . . . . . . . . . . .  D  ADDR  0088H
 TF0. . . . . . . . . . . . . . . . .  B  ADDR  008DH  NOT USED
 TF1. . . . . . . . . . . . . . . . .  B  ADDR  008FH  NOT USED
 TF2. . . . . . . . . . . . . . . . .  B  ADDR  00CFH  NOT USED
@@ -191,6 +196,7 @@ TR0. . . . . . . . . . . . . . . . .  B  ADDR  008CH  NOT USED
 TR1. . . . . . . . . . . . . . . . .  B  ADDR  008EH  NOT USED
 TR2. . . . . . . . . . . . . . . . .  B  ADDR  00CAH  NOT USED
 TXD. . . . . . . . . . . . . . . . .  B  ADDR  00B1H  NOT USED
+WAIT . . . . . . . . . . . . . . . .  C  ADDR  003BH
 WDTCON . . . . . . . . . . . . . . .  D  ADDR  00A7H  NOT USED
 WDTPRG . . . . . . . . . . . . . . .  D  ADDR  00A7H  NOT USED
 WDTRST . . . . . . . . . . . . . . .  D  ADDR  00A6H  NOT USED
