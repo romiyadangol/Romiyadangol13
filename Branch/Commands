@@ -1,0 +1,7 @@
+git branch
+git branch romiya
+git branch
+git switch romiya
+
+git pull origin romiya
+git push origin romiya
